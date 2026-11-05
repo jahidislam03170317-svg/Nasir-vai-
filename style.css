@@ -333,3 +333,34 @@ button {
         transform: translateY(110vh) rotate(720deg);
     }
 }
+.cake {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    bottom: auto !important;
+    right: auto !important;
+    margin: 0 !important;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 110px;
+    opacity: 0;
+    z-index: 50;
+}
+
+.cake.show {
+    animation: centerCake 2s ease forwards;
+}
+
+@keyframes centerCake {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    70% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
