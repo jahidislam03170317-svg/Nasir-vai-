@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -5,36 +6,33 @@
 }
 
 body {
-    background: radial-gradient(circle, #29205b, #070714);
-    color: white;
-    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
+    background: radial-gradient(circle, #30205f, #080817);
+    font-family: Arial, sans-serif;
+    color: white;
 }
 
 .container {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     position: relative;
     overflow: hidden;
 }
+
+/* Stars */
 
 .stars {
     position: absolute;
     inset: 0;
     background-image:
-    radial-gradient(white 1px, transparent 1px),
-    radial-gradient(#ff80d5 1px, transparent 1px);
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(#ff80d5 1px, transparent 1px);
     background-size: 50px 50px, 90px 90px;
-    animation: stars 15s linear infinite;
 }
 
-@keyframes stars {
-    to {
-        background-position: 100px 100px;
-    }
-}
-
-/* INTRO */
+/* Intro */
 
 .intro {
     position: absolute;
@@ -46,7 +44,6 @@ body {
 
 .intro h2 {
     color: #ffd66b;
-    font-size: 27px;
 }
 
 .intro p {
@@ -61,16 +58,14 @@ button {
     border: none;
     border-radius: 30px;
     font-size: 17px;
-    font-weight: bold;
-    box-shadow: 0 0 20px #ff0080;
     margin-top: 20px;
 }
 
-/* BIRTHDAY TITLE */
+/* Birthday Text */
 
 .birthday {
     position: absolute;
-    top: 9%;
+    top: 8%;
     width: 100%;
     text-align: center;
     opacity: 0;
@@ -85,25 +80,22 @@ button {
 
 .birthday h2 {
     color: #ff65c7;
-    font-size: clamp(19px, 5vw, 30px);
+    font-size: clamp(18px, 5vw, 30px);
     margin-top: 15px;
-    text-shadow: 0 0 15px #ff00ae;
 }
 
 .wish {
     margin-top: 15px;
-    font-size: 14px;
-    color: white;
     padding: 0 15px;
 }
 
-/* ROBOT */
+/* Robot */
 
 .robot {
     position: absolute;
     width: 150px;
     height: 270px;
-    bottom: 100px;
+    bottom: 8%;
     left: -180px;
     opacity: 0;
     z-index: 5;
@@ -123,7 +115,7 @@ button {
     }
 }
 
-/* HEAD */
+/* Robot Head */
 
 .head {
     position: absolute;
@@ -166,10 +158,9 @@ button {
     height: 5px;
     background: #28384d;
     margin: 12px auto;
-    border-radius: 10px;
 }
 
-/* BODY */
+/* Body */
 
 .body {
     position: absolute;
@@ -180,7 +171,6 @@ button {
     background: linear-gradient(135deg, white, #7188a8);
     border: 4px solid #39dcff;
     border-radius: 18px;
-    box-shadow: 0 0 15px cyan;
 }
 
 .heart {
@@ -189,10 +179,9 @@ button {
     background: #ff168c;
     border-radius: 50%;
     margin: 28px auto;
-    box-shadow: 0 0 15px pink;
 }
 
-/* ARMS */
+/* Arms */
 
 .arm {
     position: absolute;
@@ -215,7 +204,7 @@ button {
     transform: rotate(-30deg);
 }
 
-/* GIFT */
+/* Gift */
 
 .gift {
     position: absolute;
@@ -227,7 +216,6 @@ button {
     border: 3px solid white;
     border-radius: 7px;
     z-index: 8;
-    box-shadow: 0 0 18px #ff00b7;
 }
 
 .ribbon {
@@ -245,7 +233,7 @@ button {
     font-size: 25px;
 }
 
-/* LEGS */
+/* Legs */
 
 .leg {
     position: absolute;
@@ -274,31 +262,21 @@ button {
     animation: legs .35s infinite alternate-reverse;
 }
 
-.robot.walk .body,
-.robot.walk .head {
-    animation: bounce .35s infinite alternate;
-}
-
 @keyframes legs {
     from { transform: rotate(-25deg); }
     to { transform: rotate(25deg); }
 }
 
-@keyframes bounce {
-    from { translate: 0 0; }
-    to { translate: 0 -6px; }
-}
-
-/* CAKE */
+/* Cake - CENTER OF SCREEN */
 
 .cake {
     position: absolute;
-    bottom: 70px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%) scale(0);
+    transform: translate(-50%, -50%) scale(0);
     font-size: 110px;
     opacity: 0;
-    z-index: 4;
+    z-index: 8;
 }
 
 .cake.show {
@@ -308,19 +286,19 @@ button {
 @keyframes cakeShow {
     0% {
         opacity: 0;
-        transform: translate(-50%, 100px) scale(0);
+        transform: translate(-50%, -50%) scale(0);
     }
     70% {
         opacity: 1;
-        transform: translate(-50%, -15px) scale(1.2);
+        transform: translate(-50%, -50%) scale(1.2);
     }
     100% {
         opacity: 1;
-        transform: translate(-50%, 0) scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
 }
 
-/* BALLOONS */
+/* Balloons */
 
 .balloons span {
     position: absolute;
@@ -341,7 +319,7 @@ button {
     }
 }
 
-/* CONFETTI */
+/* Confetti */
 
 .confetti {
     position: absolute;
@@ -353,20 +331,5 @@ button {
 @keyframes fall {
     to {
         transform: translateY(110vh) rotate(720deg);
-    }
-}
-
-@media(max-height: 600px) {
-    .robot {
-        bottom: 45px;
-    }
-
-    .cake {
-        bottom: 35px;
-        font-size: 80px;
-    }
-
-    .birthday {
-        top: 4%;
     }
 }
