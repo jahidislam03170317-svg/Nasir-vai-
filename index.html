@@ -1,88 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Nasir Bhaiya</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#17365d">
+<title>HSC English Writing</title>
+<style>
+:root{--blue:#17365d;--accent:#2563eb;--bg:#f3f6fb;--card:#fff;--text:#172033;--muted:#64748b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.55}
+header{background:linear-gradient(135deg,#17365d,#2563eb);color:#fff;padding:22px 17px 18px;border-radius:0 0 22px 22px}
+header h1{font-size:22px;margin:0 0 5px}header p{margin:0;font-size:13px;opacity:.9}
+main{max-width:720px;margin:auto;padding:14px}
+.search{width:100%;padding:13px 14px;border:1px solid #d7deea;border-radius:12px;font-size:16px;margin:2px 0 13px;background:#fff}
+.tabs{display:flex;gap:7px;overflow:auto;padding:2px 0 12px}
+.tab{border:0;border-radius:20px;padding:10px 14px;background:#e2e8f0;color:#24324a;font-weight:700;white-space:nowrap}
+.tab.active{background:var(--blue);color:#fff}
+.card{background:var(--card);border:1px solid #e4eaf2;border-radius:15px;padding:15px;margin:0 0 12px;box-shadow:0 2px 8px #102a4310}
+.card h2{font-size:17px;margin:0 0 9px;color:var(--blue)}
+.card p{margin:0 0 10px;font-size:15px;white-space:pre-wrap}
+.meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+.shortcut{background:#eff6ff;border-left:3px solid var(--accent);padding:9px 11px;border-radius:7px;font-size:13px;color:#1e3a8a}
+.actions{display:flex;gap:8px;margin-top:11px;flex-wrap:wrap}
+button.small{border:0;border-radius:9px;padding:9px 11px;background:#e8eef8;color:#17365d;font-weight:700}
+.empty{color:var(--muted);text-align:center;padding:25px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+</style>
 </head>
-
 <body>
-
-<div class="stars"></div>
-
-<div class="container">
-
-    <div class="intro" id="intro">
-        <h2>🎉 A Special Surprise 🎉</h2>
-        <p>For Someone Special ❤️</p>
-        <button id="startBtn">Open Surprise 🎁</button>
-    </div>
-
-    <div class="birthday" id="birthday">
-
-        <h1>HAPPY BIRTHDAY</h1>
-        <h2>NASIR BHAIYA 💗❤️</h2>
-
-        <p class="wish">
-            May your life be filled with happiness,
-            love and success! ❤️
-        </p>
-
-    </div>
-
-    <!-- ROBOT -->
-
-    <div class="robot" id="robot">
-
-        <div class="antenna"></div>
-
-        <div class="head">
-            <div class="eyes">
-                <span></span>
-                <span></span>
-            </div>
-            <div class="mouth"></div>
-        </div>
-
-        <div class="body">
-            <div class="heart"></div>
-        </div>
-
-        <div class="arm left-arm"></div>
-        <div class="arm right-arm"></div>
-
-        <div class="gift">
-            <div class="ribbon"></div>
-            <div class="vai">🎀</div>
-        </div>
-
-        <div class="leg left-leg"></div>
-        <div class="leg right-leg"></div>
-
-    </div>
-
-    <!-- CAKE -->
-
-    <div class="cake" id="cake">
-        🎂
-    </div>
-
-    <div class="balloons">
-        <span>🎈</span>
-        <span>🎈</span>
-        <span>🎈</span>
-        <span>🎈</span>
-        <span>🎈</span>
-    </div>
-
-    <div id="confetti"></div>
-
-</div>
-
-<audio id="music" src="birthday.mp3" preload="auto"></audio>
-
-<script src="script.js"></script>
-
+<header><h1>HSC English Writing</h1><p>Easy • Medium • Exam practice</p></header>
+<main>
+<input id="search" class="search" placeholder="Search topic..." aria-label="Search topic">
+<nav class="tabs" id="tabs"></nav>
+<div id="content"></div>
+<footer>Study regularly • Practise writing without looking</footer>
+</main>
+<script>
+const data = [
+{cat:"Paragraph",title:"Climate Change",body:"Climate change is one of the most serious problems in the world today. It means the long-term change in the Earth's temperature and weather. It is mainly caused by cutting down trees, burning fossil fuels, smoke from factories and vehicles, and environmental pollution. As a result, the temperature of the Earth is rising. Ice is melting, sea levels are increasing, and floods, droughts and storms are becoming more common. Bangladesh is also greatly affected because it is a low-lying country. Climate change harms people, animals, plants and agriculture. To reduce this problem, we should plant more trees, stop deforestation, reduce pollution and use clean energy. The government and the people must work together to protect our planet.",tip:"Meaning → Causes → Effects → Bangladesh → Solutions"},
+{cat:"Paragraph",title:"Tree Plantation",body:"Tree plantation means planting trees in large numbers. Trees are very important for our life and environment. They give us oxygen, fruits, flowers, wood and shade. They also keep the environment cool and maintain the balance of nature. Trees absorb carbon dioxide and help reduce air pollution. They prevent soil erosion and provide shelter for birds and animals. But people are cutting down trees for houses, roads and industries. This is harmful to our environment and increases global warming. So, we should plant more trees beside roads, around houses, in schools and on unused land. The government should arrange tree plantation programmes and make people aware of their importance. Everyone should plant and protect trees for a greener and safer world.",tip:"Meaning → Uses → Importance → Deforestation → Steps"},
+{cat:"Paragraph",title:"Importance of Learning English",body:"English is an international language. It is used in education, business, science, technology and communication all over the world. Learning English is important for students because many books, websites and study materials are written in English. It helps us communicate with people from different countries. A good knowledge of English can also create better opportunities for higher education and future jobs. We can learn English by reading newspapers, listening to English programmes, watching educational videos and speaking regularly. We should learn new words and practise writing every day. We should not be afraid of making mistakes because practice makes us better. Therefore, every student should learn English to gain knowledge and prepare for the future.",tip:"International language → Uses → Student benefits → How to learn → Conclusion"},
+{cat:"Composition",title:"Childhood Memories",body:"Childhood is the sweetest period of human life. The memories of childhood are always special because those days are full of joy, love and freedom. I still remember my early days in the village. I used to play with my friends in the open fields and spend time with my family. We played different outdoor games and enjoyed the beauty of nature. During holidays, I visited my grandparents and listened to their stories. My parents cared for me and taught me good manners. School life was also an important part of my childhood. I remember my teachers, classmates and many happy moments. Sometimes I made mistakes, but those experiences taught me valuable lessons. As I grow older, I understand how precious those days were. Childhood memories give me happiness and inspire me to become a better person.",tip:"Sweet period → Games → Family → School → Lessons → Feelings"},
+{cat:"Composition",title:"Student and Social Service",body:"Students are an important part of society. They are the future leaders of the country. Besides studying, they can take part in social service. Social service means helping people and working for the welfare of society. Students can help poor and helpless people, teach illiterate children and distribute food and clothes among people in need. They can also take part in cleaning programmes, tree plantation and awareness campaigns. During floods or other natural disasters, students can collect relief and help affected families. These activities develop kindness, responsibility and leadership. They also teach students the value of cooperation. However, students should not neglect their studies while doing social work. They should balance education and social service. In this way, students can help build a healthy, educated and peaceful society.",tip:"Students → Meaning → Helping activities → Disaster help → Benefits → Balance"},
+{cat:"Composition",title:"Wonders of Modern Science",body:"Modern science is one of the greatest blessings of human civilisation. It has changed our life in many ways. Electricity is one of the greatest inventions because it lights our homes and runs machines. Mobile phones and the internet have made communication fast and easy. We can now learn, work and share information from almost anywhere. Modern medical science helps doctors diagnose and treat many diseases. Trains, cars and aeroplanes have made travelling easier and faster. Science has also improved agriculture through modern machines and better methods of farming. However, the misuse of science can cause pollution and other problems. So, we should use scientific inventions wisely. Modern science has made our life more comfortable, and its proper use can help create a better future.",tip:"Introduction → Electricity → Communication → Medicine → Transport → Agriculture → Caution"},
+{cat:"Report",title:"A Report on a Road Accident",body:"By a Staff Reporter\n\nChattogram, 9 November 2026:\n\nA serious road accident took place in a busy area of Chattogram yesterday. A bus collided with a truck, causing several people to be injured. Local people rushed to the spot and helped the victims. The injured people were taken to a nearby hospital. The police arrived and started an investigation. The accident also caused a long traffic jam. Careless driving, speeding and violation of traffic rules are common causes of road accidents. Such accidents can be reduced by following traffic laws, keeping vehicles fit and making drivers more careful. The authorities should take proper steps to ensure road safety.",tip:"Accident → Injured → Rescue → Police → Traffic jam → Causes → Solution"},
+{cat:"Report",title:"Annual Prize Giving Ceremony",body:"By a Staff Reporter\n\nChattogram, 9 November 2026:\n\nThe annual prize giving ceremony of our college was held on the college campus yesterday. The campus was beautifully decorated for the occasion. The principal presided over the programme, while teachers, students and guardians attended it. The chief guest was welcomed with flowers. After the speeches, the chief guest distributed prizes among the meritorious students for their good results and achievements. The students received their prizes with great joy. A short cultural programme was also arranged. The ceremony ended with a vote of thanks from the principal. It was an enjoyable and memorable day for everyone.",tip:"Event → Decoration → Guests → Speeches → Prize distribution → Cultural show → Ending"},
+{cat:"Report",title:"Price Hike",body:"By a Staff Reporter\n\nChattogram, 9 November 2026:\n\nPrice hike has become a serious problem in our country. The prices of daily necessities such as rice, oil, vegetables and other goods are increasing day by day. As a result, poor and middle-class people are suffering greatly. Many families find it difficult to manage their daily expenses. Some dishonest traders and market syndicates may take advantage of the situation. The government should monitor markets regularly and take action against those who create artificial shortages. Fair pricing and proper supply of goods are also necessary. People hope that the authorities will take effective steps to control the prices of essential goods.",tip:"Problem → Examples → Who suffers → Reasons → Government action → Hope"},
+{cat:"Report",title:"Food Adulteration",body:"By a Staff Reporter\n\nChattogram, 9 November 2026:\n\nFood adulteration is a serious problem in our country. Some dishonest traders mix harmful substances with food to make extra profit. Different food items, including fruits, vegetables, fish and spices, may be adulterated. Eating unsafe food can cause illness and create serious health problems. It is therefore a threat to public health. The authorities should inspect markets regularly and punish those who sell adulterated food. Awareness campaigns should also be arranged to inform people about food safety. Consumers should buy food from reliable sellers. Everyone should work together to ensure safe food for all.",tip:"Problem → Dishonest traders → Unsafe food → Health effects → Inspection → Awareness"},
+{cat:"Application",title:"Opening a Computer / Language Club",body:"9 November 2026\n\nTo\nThe Principal\n[College Name], [City].\n\nSubject: Prayer for opening a computer/language club.\n\nSir,\nWe, the students of your college, beg to state that our college has no computer/language club. Such a club is very useful for improving our practical knowledge and communication skills. It will help students learn beyond their textbooks and prepare for future studies and jobs. We, therefore, request you to take necessary steps to open a computer/language club in our college.\n\nWe shall be grateful for your kind consideration.\n\nYours obediently,\n[Your Name]\nOn behalf of the students of [Class/College].",tip:"Who you are → No club → Why needed → Request → Thanks"},
+{cat:"Application",title:"Increasing Library Facilities",body:"9 November 2026\n\nTo\nThe Principal\n[College Name], [City].\n\nSubject: Prayer for increasing library facilities.\n\nSir,\nWe, the students of your college, beg to state that our college library does not have enough books and facilities for all students. Many important books are unavailable, and students often cannot find suitable seats during study hours. A well-equipped library is essential for gaining knowledge and improving our studies. We, therefore, request you to increase the number of books, provide more seats and improve the library facilities.\n\nWe shall be grateful for your kind consideration.\n\nYours obediently,\n[Your Name]\nOn behalf of the students of [Class/College].",tip:"Library problem → Lack of books/seats → Importance → Specific requests → Thanks"}
+];
+const cats=["All","Paragraph","Composition","Report","Application"];
+let current="All";
+const tabs=document.getElementById("tabs"), content=document.getElementById("content"), search=document.getElementById("search");
+function renderTabs(){tabs.innerHTML=cats.map(c=>`<button class="tab ${c===current?'active':''}" data-cat="${c}">${c}</button>`).join("");tabs.querySelectorAll("button").forEach(b=>b.onclick=()=>{current=b.dataset.cat;renderTabs();render()})}
+function render(){let q=search.value.toLowerCase();let items=data.filter(x=>(current==="All"||x.cat===current)&&(x.title.toLowerCase().includes(q)||x.body.toLowerCase().includes(q)));content.innerHTML=items.length?items.map((x,i)=>`<article class="card"><div class="meta">${x.cat}</div><h2>${x.title}</h2><p>${x.body.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}</p><div class="shortcut"><b>Shortcut:</b> ${x.tip}</div><div class="actions"><button class="small" onclick="copyText(${JSON.stringify(x.body).replace(/</g,'\\u003c')})">Copy writing</button></div></article>`).join(""):'<div class="empty">No topic found.</div>'}
+function copyText(t){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(()=>alert("Copied!")).catch(()=>alert("Select and copy the text manually."))}else{alert("Clipboard is not available in this browser. You can select the text and copy it.")}}
+search.addEventListener("input",render);renderTabs();render();
+</script>
 </body>
 </html>
